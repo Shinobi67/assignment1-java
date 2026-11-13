@@ -59,11 +59,23 @@ public abstract class Car implements Movable {
     }
 
     public void gas(double amount) {
-        incrementSpeed(amount);
+        if (amount >= 0 && amount <= 1) {
+            incrementSpeed(amount);
+
+            if (currentSpeed > enginePower) {
+                currentSpeed = enginePower;
+            }
+        }
     }
 
     public void brake(double amount) {
-        decrementSpeed(amount);
+        if (amount >= 0 && amount <= 1) {
+            decrementSpeed(amount);
+
+            if (currentSpeed < 0) {
+                currentSpeed = 0;
+            }
+        }
     }
 
     protected double x = 0;
