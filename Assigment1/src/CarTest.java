@@ -57,7 +57,7 @@ public class CarTest {
         double gas= 0.5;
         volvo.gas(gas);
         double result = volvo.getCurrentSpeed() - oldspeed;
-        boolean validResult = result == volvo.speedFactor() * gas;
+        boolean validResult = math.abs(result - volvo.speedFactor() * gas) < 0.000001;
         reportResult("trimfactor result",validResult);
     }
     public static void main(String[] args) {
