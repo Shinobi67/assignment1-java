@@ -12,7 +12,7 @@ public class CarTest {
         fastSaab.setTurboOn();
         slowSaab.setTurboOff();
 
-        fastSaab.gas(1);
+        fastSaab.gas(0.5);
         slowSaab.gas(0.5);
 
         boolean result = slowSaab.getCurrentSpeed() < fastSaab.getCurrentSpeed();
